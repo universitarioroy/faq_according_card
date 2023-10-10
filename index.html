@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+        :root{
+            --color-Soft-violet:hsl(273, 75%, 66%);
+            --color-Soft-blue: hsl(240, 73%, 65%);
+            --color-white:#fff;
+            --color-black:#000;
+            font-size: 62.5%;
+
+            --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+            --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--color-Soft-violet) 0%, var(--color-Soft-violet)68%, var(--color-Soft-blue) 100%);
+            display: grid;
+            place-items: center;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+        .main{
+            background-color: var(--color-white);
+            border-radius: 10px;
+            width: 80%;
+            min-width: 250px;
+            min-height: calc(100% - 220px);
+            margin-top: 100px;
+            margin-bottom: 50px;
+            position: relative;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .main-imges{
+            width: 100%;
+            height: 44%;
+            position: absolute;
+            top:-25%;
+            left: 0;
+        }
+        
+        .main-imges__img{
+            width: 100%;
+            height: 100%;
+            background:url('./images/illustration-woman-online-mobile.svg') no-repeat center;
+            background-size: 90% 90%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .main-imges__img::after{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('./images/bg-pattern-mobile.svg') no-repeat center bottom; 
+            background-size: 90%;
+            left: calc( (100% - 260px)/2 );
+            top: 0px;
+            max-width: 260px;
+            min-height: 200px;
+        }
+
+        .contain{
+            width: 100%;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* min-height: 300px; */
+            min-height: calc( 100vh - 360px)
+        }
+
+
+        .contain-item__title{
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        
+
+        .contain-item__detail{
+            border-bottom: 1px solid var(--Dark-grayish-blue);
+            min-height: 34px;
+        }
+
+        .contain-item__detail--title{
+            
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            grid-template-areas: tituloicon;
+            justify-content: space-between;
+        }
+        .contain-item__detail--title::after{
+            content: url('./images/icon-arrow-down.svg');
+            grid-template-areas: tituloicon;
+
+        }
+
+        .contain-item__detail--title:hover::after{
+            cursor: pointer;
+        }
+
+
+
+        
+        .contain-item__detail *{
+            color:var(--Dark-grayish-blue);
+        }
+
+        .contain-item__detail--description{
+            display: none;
+        }
+
+
+
+        .show-item-titulo{
+            color: var(--color-black);
+        }
+        .show-item-description{
+            display: block;
+            min-height: 40px;
+            line-height: 1.5;
+            margin-top: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+
+  </style>
+</head>
+<body>
+
+
+<main class="main">
+    <section class="main-imges">
+        <div class="main-imges__img">
+
+        </div>
+    </section>
+    
+    <section class="contain"> 
+        <h1 class="contain-item__title">FAQ</h1>
+        <div class="contain-item__detail">
+            <h2 class="contain-item__detail--title">How many team members can I invite?</h2>
+            <p class="contain-item__detail--description">
+                You can invite up to 2 additional users on the Free plan. There is no limit on 
+                team members for the Premium plan.
+            </p>
+        </div>
+        <div class="contain-item__detail">
+            <h2 class="contain-item__detail--title">What is the maximum file upload size?</h2>
+            <p class="contain-item__detail--description">
+                No more than 2GB. All files in your account must fit your allotted storage space.
+            </p>
+        </div>
+        <div class="contain-item__detail">
+            <h2 class="contain-item__detail--title">How do I reset my password?</h2>
+            <p class="contain-item__detail--description">
+                Yes! Send us a message and we’ll process your request no questions asked.
+            </p>
+        </div>
+        
+        <div class="contain-item__detail">
+            <h2 class="contain-item__detail--title">Can I cancel my subscription?</h2>
+            <p class="contain-item__detail--description">
+                Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.
+            </p>
+        </div>
+        
+        <div class="contain-item__detail">
+            <h2 class="contain-item__detail--title">Do you provide additional support?</h2>
+            <p class="contain-item__detail--description">
+                Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            </p>
+        </div>
+    </section>
+</main>
+
+<script>
+    
+    const items=document.querySelectorAll('.contain .contain-item__detail');
+    
+    items.forEach((item)=>{
+        item.querySelector('.contain-item__detail--title')
+        .addEventListener('click',(e)=>{
+            
+                e.target.classList.toggle('show-item-titulo');
+                e.target.nextElementSibling.classList.toggle('show-item-description');
+            
+            console.log('elemento');
+        });
+    });
+
+    
+
+
+</script>
+
+</body>
+</html>
